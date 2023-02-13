@@ -1,0 +1,11 @@
+#showForm{
+    display:none;
+}
+form {
+    max-width: 0;
+    overflow: hidden;
+    transition: all .15s ease;
+  }
+  #showForm:checked ~ form {
+    max-width: 900px;
+  }

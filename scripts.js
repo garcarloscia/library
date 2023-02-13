@@ -38,7 +38,7 @@ function printMyLibrary() {
         card.appendChild(cardPages);
 
         let cardRead = document.createElement('div');
-        let readStatus = document.createElement('button');
+        let readStatus = document.createElement('a');
         readStatus.classList.add('readStatus');
         readStatus.textContent = 'Change status';
         let readReport = '';
@@ -55,7 +55,7 @@ function printMyLibrary() {
             printMyLibrary();
         });
 
-        let cardBorrar = document.createElement('button');
+        let cardBorrar = document.createElement('a');
         cardBorrar.classList.add('borrar');
         cardBorrar.textContent = 'Remove';
         card.appendChild(cardBorrar);
@@ -64,7 +64,7 @@ function printMyLibrary() {
             printMyLibrary();
         });
 
-        let cardEditar = document.createElement('button');
+        let cardEditar = document.createElement('a');
         cardEditar.classList.add('card');
         cardEditar.textContent = 'Edit';
         card.appendChild(cardEditar);
