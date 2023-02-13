@@ -65,7 +65,7 @@ input[type="checkbox"] {
   position: relative;
   width: 2em;
   height: 2em;
-  border: 1px solid gray;
+  border: 1px solid var(--color-bordes);
   /* Adjusts the position of the checkboxes on the text baseline */
   vertical-align: -10px;
   /* Set here so that Windows' High-Contrast Mode can override */
