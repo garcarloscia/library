@@ -1,11 +1,109 @@
-#showForm{
-    display:none;
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 17px;
+  --color-focus: rgb(148, 100, 3);
+  --color-bordes: #aaaaaa;
+  --color-placeholder: rgb(169, 167, 165);
+}
+h3{
+  margin:0;
+}
+
+#mainbox{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hide {
+  visibility: hidden;
+}
+.show{
+  visibility: visible;
 }
 form {
-    max-width: 0;
-    overflow: hidden;
-    transition: all .15s ease;
-  }
-  #showForm:checked ~ form {
-    max-width: 900px;
-  }
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label{
+  appearance: none;
+  display: block;
+  padding: 5px;
+
+}
+button,
+select,
+progress,
+meter,
+input[type="password"],
+input[type="text"],
+input[type="number"],
+input[type="search"] {
+  appearance: none;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom:10px;
+  margin-top:5px;
+  width: 100%;
+  border: 1px solid var(--color-bordes);
+}
+input:focus { 
+  outline:0; /*quita el borde en focus por defecto en los navegadores*/
+  border: 2px solid var(--color-focus);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border: 1px solid gray;
+  /* Adjusts the position of the checkboxes on the text baseline */
+  vertical-align: -10px;
+  /* Set here so that Windows' High-Contrast Mode can override */
+  color: var(--color-focus);
+}
+
+input[type="checkbox"]::before {
+  content: "✔";
+  position: absolute;
+  font-size: 2em;
+  right: 1px;
+  top: -7px;
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+  /* Use `visibility` instead of `display` to avoid recalculating layout */
+  visibility: visible;
+}
+
+input[type="checkbox"]:disabled {
+  border-color: black;
+  background: #ddd;
+  color: gray;
+}
+
+
+#container {
+  padding: 1rem;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+.card:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; ;
+}

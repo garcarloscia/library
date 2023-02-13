@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Document</title>
    
 </head>
 <body>
-    <input type="checkbox" id="showForm">
-    <label for="showForm">Nuevo libro añadir</label>
-    <form>
-        <label for="tittle">Tittle</label>
-        <input type="text" id="tittle" name="tittle">
-        <label for="author">Author</label>
-        <input type="text" id="author" name="author">
-        <label for="Pages">Pages</label>
-        <input type="number" id="pages" name="pages" min="1" max="9999">
-        
-        <input type="checkbox" id="read" name="read" value="true">
-        <label for="read">Mark if already read</label>
+    <div id="mainbox">
+        <div id="container-form">
+            <form>
+                <label for="tittle">Tittle</label>
+                <input type="text" id="tittle" name="tittle">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author">
+                <label for="Pages">Pages</label>
+                <input type="number" id="pages" name="pages" min="1" max="9999">
+                
+                <input type="checkbox" id="read" name="read" value="true">
+                <span>Mark if already read</span>
 
-        <button type="submit">Add Book</button>
-    </form>
-   <div id="container"></div>
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+        <div id="container"></div>
+    </div>
      <script src="scripts.js"></script>
 </body>
 </html>
