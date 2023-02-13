@@ -12,14 +12,14 @@ function addBookToLibrary() {
         formTittle.value,
         formAuthor.value,
         formPages.value,
-        formRead.value
+        formRead.checked
     );
     myLibrary.push(newBook);
-    accessMyLibrary();
+    printMyLibrary();
     
 };
 
-function accessMyLibrary(){
+function printMyLibrary(){
     container.innerHTML = '';    
     myLibrary.forEach((element, index) => {
 
@@ -40,10 +40,18 @@ function accessMyLibrary(){
         card.appendChild(cardPages);
 
         let cardRead = document.createElement('div');
+        let readStatus = document.createElement('button');
+        readStatus.classList.add('readStatus');
+        readStatus.textContent='Change status';
         let readReport = "";
         if (element.read){readReport='Already read'}else{readReport='Not read'};
         cardRead.textContent=`Read: ${readReport}`;
         card.appendChild(cardRead);
+        cardRead.appendChild(readStatus);
+        document.querySelector('.readStatus').addEventListener("click", function() {
+            myLibrary[index].read = !myLibrary[index].read;
+            printMyLibrary();
+        });
 
         let cardBorrar = document.createElement('button');
         cardBorrar.classList.add('borrar');
@@ -51,7 +59,7 @@ function accessMyLibrary(){
         card.appendChild(cardBorrar);
         document.querySelector('.borrar').addEventListener("click", function() {
             myLibrary.splice(index, 1);
-            accessMyLibrary();
+            printMyLibrary();
         });
 
         let cardEditar = document.createElement('button');
