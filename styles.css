@@ -17,6 +17,27 @@ h3{
   margin-left: auto;
   margin-right: auto;
 }
+#header{
+  padding:1.5rem;
+  display:flex;
+  justify-content: space-between;
+}
+#new-book{
+  background-color: aquamarine;
+  border-radius: 50%;
+  border:5px solid rgb(148, 100, 3);
+  align-self: center;
+  cursor:pointer;
+}
+#new-book:hover{
+  background-color: red;
+  border:5px solid  grey;
+}
+
+.header-icon{
+  height: 50px;
+  width: 50px;
+}
 
 .hide {
   visibility: hidden;
@@ -28,6 +49,7 @@ form {
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 label{
