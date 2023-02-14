@@ -62,19 +62,19 @@ function printMyLibrary() {
         readStatus.textContent = 'Change status';
         let readReport = '';
         if (element.read) {
-            readReport = 'Already read';
+            readReport = '✓ Read';
         } else {
-            readReport = 'Not read';
+            readReport = '🞬 Not read';
         }
-        cardRead.textContent = `Read: ${readReport}`;
+        cardRead.textContent = `${readReport}`;
         card.appendChild(cardRead);
         cardRead.appendChild(readStatus);
-        readStatus.addEventListener("click", function () {
+        cardRead.addEventListener("click", function () {
             myLibrary[index].read = !myLibrary[index].read;
             printMyLibrary();
         });
 
-        let cardBorrar = document.createElement('a');
+        let cardBorrar = document.createElement('div');
         cardBorrar.classList.add('borrar');
         cardBorrar.textContent = 'Remove';
         card.appendChild(cardBorrar);
@@ -83,10 +83,10 @@ function printMyLibrary() {
             printMyLibrary();
         });
 
-        let cardEditar = document.createElement('a');
+/*         let cardEditar = document.createElement('a');
         cardEditar.classList.add('card');
         cardEditar.textContent = 'Edit';
-        card.appendChild(cardEditar);
+        card.appendChild(cardEditar); */
     });
 }
 
