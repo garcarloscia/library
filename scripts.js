@@ -1,4 +1,23 @@
-let myLibrary = [];
+let myLibrary = [
+    {tittle:"Energy Flash",author:"Simon Reynolds", pages:450, read:true},
+    {tittle:"Angrynomics",author:"Colerman & Blyth", pages:194, read:true},
+];
+
+const container = document.querySelector('#container');
+const form = document.querySelector("form");
+const formTittle = document.querySelector("#tittle");
+const formAuthor = document.querySelector("#author");
+const formPages = document.querySelector("#pages");
+const formRead = document.querySelector("#read");
+const showForm = document.querySelector("#new-book");
+const hideForm = document.querySelector("#formbox");
+
+printMyLibrary();
+
+showForm.addEventListener("click", event => {
+    event.preventDefault();
+    hideForm.classList.toggle("hide");
+});
 
 function Book(tittle, author, pages, read) {
     this.tittle = tittle;
@@ -71,14 +90,10 @@ function printMyLibrary() {
     });
 }
 
-const container = document.querySelector('#container');
-const form = document.querySelector("form");
-const formTittle = document.querySelector("#tittle");
-const formAuthor = document.querySelector("#author");
-const formPages = document.querySelector("#pages");
-const formRead = document.querySelector("#read");
+
 
 form.addEventListener("submit", event => {
     event.preventDefault();
     addBookToLibrary();
+    hideForm.classList.toggle("hide");
 });

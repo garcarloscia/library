@@ -45,11 +45,17 @@ h3{
 .show{
   visibility: visible;
 }
+#form-box{
+  position:relaitve;
+}
 form {
+  background-color:aqua;
+  position: absolute;
   max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  
+  z-index: 1;
+  padding: 1.5rem;
+  border-radius:20px;
+  border:1px solid black;
 }
 
 label{
@@ -116,6 +122,7 @@ input[type="checkbox"]:disabled {
 
 
 #container {
+  position:relative;
   padding: 1rem;
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
