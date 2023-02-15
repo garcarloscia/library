@@ -11,12 +11,16 @@ const formPages = document.querySelector("#pages");
 const formRead = document.querySelector("#read");
 const showForm = document.querySelector("#new-book");
 const hideForm = document.querySelector("#formbox");
+const newEntry = document.querySelector("#newentry");
+const centered = document.querySelector("#close");
 
 printMyLibrary();
 
 showForm.addEventListener("click", event => {
     event.preventDefault();
     hideForm.classList.toggle("hide");
+    newEntry.classList.toggle("hide");
+    centered.classList.toggle("hide");
 });
 
 function Book(tittle, author, pages, read) {
@@ -64,7 +68,7 @@ function printMyLibrary() {
         if (element.read) {
             readReport = '✓ Read';
         } else {
-            readReport = '🞬 Not read';
+            readReport = '✕ Not read';
         }
         cardRead.textContent = `${readReport}`;
         card.appendChild(cardRead);
@@ -96,4 +100,6 @@ form.addEventListener("submit", event => {
     event.preventDefault();
     addBookToLibrary();
     hideForm.classList.toggle("hide");
+    newEntry.classList.toggle("hide");
+    centered.classList.toggle("hide");
 });
